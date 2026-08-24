@@ -13,73 +13,69 @@ export async function POST(req: Request) {
       service: 'gmail',
       auth: {
         user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASSWORD?.replace(/\s/g, ''), // Remove spaces if any
+        pass: process.env.GMAIL_PASSWORD?.replace(/\s/g, ''),
       },
     });
 
-    // 1. Email to Site Owner (bodlizstudio@gmail.com)
+    // 1. Cleaner, more organized HTML Email to Site Owner (bodlizstudio@gmail.com)
+    const adminHtml = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; color: #333;">
+        <div style="background-color: #3A3029; color: #fff; padding: 20px; text-align: center; border-radius: 8px 8px 0 0;">
+          <h1 style="margin: 0; font-size: 22px;">Novo sporočilo z obrazca</h1>
+        </div>
+        <div style="background-color: #fff; padding: 30px; border-radius: 0 0 8px 8px; border: 1px solid #ddd; border-top: none;">
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; width: 120px; color: #666; font-weight: bold;">Ime in priimek:</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: 500;">${name}</td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666; font-weight: bold;">E-mail:</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: 500;"><a href="mailto:${email}" style="color: #AD8067; text-decoration: none;">${email}</a></td>
+            </tr>
+            <tr>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #666; font-weight: bold;">Zadeva:</td>
+              <td style="padding: 10px 0; border-bottom: 1px solid #eee; font-weight: 500;">${subject}</td>
+            </tr>
+          </table>
+          
+          <div style="margin-top: 25px;">
+            <p style="color: #666; font-weight: bold; margin-bottom: 10px;">Vsebina sporočila:</p>
+            <div style="background-color: #f4f4f4; padding: 20px; border-radius: 6px; white-space: pre-wrap; line-height: 1.5;">${message}</div>
+          </div>
+          
+          <div style="margin-top: 30px; text-align: center;">
+            <a href="mailto:${email}" style="background-color: #AD8067; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: bold; display: inline-block;">Odgovori stranki</a>
+          </div>
+        </div>
+      </div>
+    `;
+
     await transporter.sendMail({
       from: `"Trenutki za dva" <${process.env.GMAIL_USER}>`,
       to: process.env.GMAIL_USER,
-      subject: `Novo sporočilo s spletne strani: ${subject}`,
-      text: `Ime: ${name}\nEmail: ${email}\nTema: ${subject}\n\nSporočilo:\n${message}`,
+      subject: `Novo sporočilo: ${subject} (${name})`,
+      html: adminHtml,
     });
 
-    // 2. Beautiful HTML Mock Order Confirmation to the Sender (User)
+    // 2. Simple Auto-Reply for Contact Form
     const customerHtml = `
-      <div style="font-family: 'Georgia', serif; max-width: 600px; margin: 0 auto; padding: 40px 20px; background-color: #F5F0E6; color: #3A3029;">
-        <div style="text-align: center; margin-bottom: 40px;">
-          <h1 style="font-size: 32px; color: #3A3029; margin: 0; font-style: italic;">Trenutki za dva</h1>
-          <p style="color: #5B4A3E; font-family: sans-serif; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-top: 10px;">Potrditev naročila</p>
-        </div>
+      <div style="font-family: 'Georgia', serif; max-width: 500px; margin: 0 auto; padding: 30px; background-color: #F5F0E6; color: #3A3029; text-align: center; border-radius: 12px;">
+        <h1 style="font-size: 26px; color: #3A3029; margin-bottom: 20px; font-style: italic;">Trenutki za dva</h1>
+        
+        <p style="font-family: sans-serif; font-size: 16px; line-height: 1.6; color: #5B4A3E; margin-bottom: 30px;">
+          Hvala za vaše sporočilo, <strong>${name}</strong>!<br><br>
+          Vaše vprašanje smo uspešno prejeli in nanj bomo odgovorili v najkrajšem možnem času.
+        </p>
 
-        <div style="background-color: #FBF8F1; padding: 40px; border-radius: 12px; border: 1px solid #E8DFCF;">
-          <h2 style="font-size: 24px; margin-top: 0; margin-bottom: 15px; color: #3A3029;">Hvala za oddano naročilo, ${name}!</h2>
-          <p style="font-family: sans-serif; font-size: 15px; line-height: 1.6; color: #5B4A3E; margin-bottom: 30px;">
-            Vaše naročilo smo uspešno prejeli in je v obdelavi. Knjiga bo kmalu na poti do vas, da bosta lahko začela ustvarjati nepozabne spomine. Spodaj so podrobnosti vašega naročila.
-          </p>
-
-          <table style="width: 100%; border-collapse: collapse; font-family: sans-serif; margin-bottom: 30px;">
-            <thead>
-              <tr style="border-bottom: 1px solid #E8DFCF;">
-                <th style="text-align: left; padding: 12px 0; color: #80634B; font-weight: 500; font-size: 13px;">Izdelek</th>
-                <th style="text-align: right; padding: 12px 0; color: #80634B; font-weight: 500; font-size: 13px;">Cena</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid #E8DFCF;">
-                <td style="padding: 16px 0; display: flex; align-items: center; gap: 15px;">
-                  <div>
-                    <div style="font-weight: 600; color: #3A3029; font-size: 15px;">100 nepozabnih trenutkov</div>
-                    <div style="color: #80634B; font-size: 13px; margin-top: 4px;">Količina: 1</div>
-                  </div>
-                </td>
-                <td style="padding: 16px 0; text-align: right; font-weight: 600; color: #3A3029;">34,99 €</td>
-              </tr>
-              <tr style="border-bottom: 1px solid #E8DFCF;">
-                <td style="padding: 16px 0; color: #5B4A3E;">Dostava</td>
-                <td style="padding: 16px 0; text-align: right; color: #3A3029;">3,50 €</td>
-              </tr>
-              <tr>
-                <td style="padding: 20px 0 0; font-weight: bold; font-size: 18px; color: #3A3029;">Skupaj</td>
-                <td style="padding: 20px 0 0; text-align: right; font-weight: bold; font-size: 18px; color: #3A3029;">38,49 €</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div style="background-color: #F5F0E6; padding: 20px; border-radius: 8px; font-family: sans-serif; font-size: 14px; color: #5B4A3E; margin-bottom: 30px;">
-            <strong>Opomba glede kontaktnega obrazca:</strong><br>
-            To je demonstracijski e-mail za prikaz izgleda računa! Vaše sporočilo: "${subject}" je bilo uspešno posredovano naši ekipi in odgovorili vam bomo v najkrajšem možnem času.
+        <div style="background-color: #FBF8F1; padding: 20px; border-radius: 8px; border: 1px solid #E8DFCF; font-family: sans-serif; text-align: left;">
+          <p style="margin: 0 0 10px 0; font-size: 14px; color: #80634B; font-weight: bold;">Če imate nujno vprašanje, sva dosegljiva tukaj:</p>
+          <div style="margin-bottom: 5px;">
+            <strong style="color: #3A3029;">E-mail:</strong> <a href="mailto:info@trenutkizadva.si" style="color: #AD8067; text-decoration: none;">info@trenutkizadva.si</a>
           </div>
-
-          <a href="#" style="display: block; width: 100%; text-align: center; background-color: #3A3029; color: #F5F0E6; padding: 14px 0; border-radius: 6px; text-decoration: none; font-family: sans-serif; font-weight: 600; font-size: 15px;">
-            Prenesi račun (PDF)
-          </a>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px; font-family: sans-serif; font-size: 12px; color: #80634B;">
-          <p>© 2026 Trenutki za dva. Vse pravice pridržane.</p>
-          <p>Oblikovano za spomine.</p>
+          <div>
+            <strong style="color: #3A3029;">Telefon:</strong> <a href="tel:+38641123456" style="color: #AD8067; text-decoration: none;">(+386) 41 123 456</a>
+          </div>
         </div>
       </div>
     `;
@@ -87,7 +83,7 @@ export async function POST(req: Request) {
     await transporter.sendMail({
       from: `"Trenutki za dva" <${process.env.GMAIL_USER}>`,
       to: email,
-      subject: `Trenutki za dva - Hvala za oddano naročilo! (in prejeto sporočilo)`,
+      subject: `Hvala za sporočilo - Trenutki za dva`,
       html: customerHtml,
     });
 
