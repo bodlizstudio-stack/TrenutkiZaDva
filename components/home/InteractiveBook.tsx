@@ -256,17 +256,17 @@ function PagePromises() {
     <PaperBase>
       <div className="absolute inset-0 flex flex-col px-[10%] py-[6%]">
         <p className="font-serif text-[clamp(0.75rem,1.3cqi,1.1rem)] text-[#3a3029] font-semibold mb-[6%]">
-          &ldquo;Ko bova Äez leta listala to knjigo...&rdquo;
+          &ldquo;Ko bova čez leta listala to knjigo...&rdquo;
         </p>
         <div className="space-y-[clamp(12px,2.5cqi,24px)] flex-1">
           {[
             "Upava, da se bova spomnila",
-            "Da se bova Å¡e vedno",
-            "In da bo najina ljubezen ostala",
-            "",
-            "Obljubiva si, da si bova vedno vzela Äas za:",
-            "Da ne bova nikoli pozabila na:",
-            "Da bova skupaj ustvarila Å¡e vsaj ___ novih zmenkov.",
+"Da se bova še vedno",
+"In da bo najina ljubezen ostala",
+"",
+"Obljubiva si, da si bova vedno vzela čas za:",
+"Da ne bova nikoli pozabila na:",
+"Da bova skupaj ustvarila še vsaj ___ novih zmenkov.",
           ].map((text, i) => (
             <div key={i}>
               {text ? (
@@ -356,7 +356,7 @@ function playSyncedTurnSound(progressOffset = 0, dir: "fwd" | "bwd" = "fwd", vol
   }
 
   const offsetSeconds = progressOffset * (TURN_MS / 1000);
-  src.start(0, offsetSeconds);
+  src.start(0, offsetSeconds + 0.12);
 
   activeSource = src;
   activeGain = gain;
@@ -826,4 +826,8 @@ export function InteractiveBook() {
     </div>
   );
 }
+
+
+
+
 
