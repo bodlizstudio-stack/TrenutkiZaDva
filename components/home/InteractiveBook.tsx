@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import {
   useState,
@@ -11,16 +11,16 @@ import {
 import { ChevronLeft, ChevronRight, Volume2, VolumeX } from "lucide-react";
 import Image from "next/image";
 
-/* ═══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    CONFIGURATION
-   ═══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 const TOTAL_SPREADS = 5;
 const TURN_MS = 720;
 const COMMIT_THRESHOLD = 0.3;
 
-/* ═══════════════════════════════════════════════
-   PAGE CONTENT — rendered as HTML for infinite sharpness
-   ═══════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   PAGE CONTENT â€” rendered as HTML for infinite sharpness
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 const PAGE_BG = "#f7f3ec";
 
 function PaperBase({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -53,7 +53,7 @@ function CameraIcon() {
   );
 }
 
-/* ── Individual pages ── */
+/* â”€â”€ Individual pages â”€â”€ */
 
 function PageBlank() {
   return <PaperBase>{null}</PaperBase>;
@@ -81,8 +81,8 @@ function PageKazaloLeft() {
       <div className="absolute inset-0 flex items-center justify-center px-8">
         <p className="font-serif text-[clamp(0.8rem,1.4cqi,1.2rem)] text-[#7a6b5d] italic text-center leading-relaxed max-w-[80%]">
           &ldquo;Vsak par ima svojo zgodbo.<br />
-          Včasih jo pišemo spontano,<br />
-          drugič potrebujemo le majhen navdih.&rdquo;
+          VÄasih jo piÅ¡emo spontano,<br />
+          drugiÄ potrebujemo le majhen navdih.&rdquo;
         </p>
       </div>
     </PaperBase>
@@ -91,18 +91,18 @@ function PageKazaloLeft() {
 
 function PageKazalo() {
   const sections = [
-    { name: "Zima", pages: "1–9" },
-    { name: "Pomlad", pages: "10–17" },
-    { name: "Poletje", pages: "18–28" },
-    { name: "Jesen", pages: "29–34" },
-    { name: "Za vse letne čase", pages: "35–54" },
+    { name: "Zima", pages: "1â€“9" },
+    { name: "Pomlad", pages: "10â€“17" },
+    { name: "Poletje", pages: "18â€“28" },
+    { name: "Jesen", pages: "29â€“34" },
+    { name: "Za vse letne Äase", pages: "35â€“54" },
   ];
   const categories = [
-    { name: "Kreativni trenutki", pages: "55–65" },
-    { name: "Romantika brez meja", pages: "66–72" },
-    { name: "Okusi in užitki", pages: "73–81" },
-    { name: "Domača čarovnija", pages: "82–90" },
-    { name: "Prostor za vajine ideje", pages: "91–100" },
+    { name: "Kreativni trenutki", pages: "55â€“65" },
+    { name: "Romantika brez meja", pages: "66â€“72" },
+    { name: "Okusi in uÅ¾itki", pages: "73â€“81" },
+    { name: "DomaÄa Äarovnija", pages: "82â€“90" },
+    { name: "Prostor za vajine ideje", pages: "91â€“100" },
   ];
   return (
     <PaperBase>
@@ -136,10 +136,10 @@ function PageQuoteLeft() {
     <PaperBase>
       <div className="absolute inset-0 flex items-end justify-center px-[10%] pb-[20%]">
         <p className="font-serif text-[clamp(0.75rem,1.3cqi,1.1rem)] text-[#5b4a3e] italic text-center leading-[1.8] max-w-[85%]">
-          &ldquo;Ljubezen ni nekaj, kar najdeš. Ljubezen je nekaj,
-          kar gradiš korak za korakom, trenutek za trenutkom.
+          &ldquo;Ljubezen ni nekaj, kar najdeÅ¡. Ljubezen je nekaj,
+          kar gradiÅ¡ korak za korakom, trenutek za trenutkom.
           Ta knjiga ni le zbirka idej. Je vajin dnevnik,
-          vajina pustolovščina in vajin spomin
+          vajina pustolovÅ¡Äina in vajin spomin
           na vse, kar bosta skupaj ustvarila.&rdquo;
         </p>
       </div>
@@ -166,11 +166,11 @@ function PageToSvaMidva() {
         <p className="font-serif text-[clamp(0.7rem,1.2cqi,1rem)] text-[#3a3029] font-semibold mb-[4%]">Midva v nekaj vrsticah:</p>
         <div className="w-[85%] space-y-[clamp(8px,2cqi,20px)]">
           <div>
-            <p className="text-[clamp(0.55rem,1cqi,0.85rem)] text-[#5b4a3e] mb-[2%]">Kdaj sva začela najino zgodbo?</p>
+            <p className="text-[clamp(0.55rem,1cqi,0.85rem)] text-[#5b4a3e] mb-[2%]">Kdaj sva zaÄela najino zgodbo?</p>
             <Line />
           </div>
           <div>
-            <p className="text-[clamp(0.55rem,1cqi,0.85rem)] text-[#5b4a3e] mb-[2%]">Kaj najraje skupaj počneva?</p>
+            <p className="text-[clamp(0.55rem,1cqi,0.85rem)] text-[#5b4a3e] mb-[2%]">Kaj najraje skupaj poÄneva?</p>
             <Line />
           </div>
           <div>
@@ -209,8 +209,8 @@ function PageActivity() {
         </div>
         {/* Date & Location */}
         <div className="flex justify-between text-[clamp(0.45rem,0.8cqi,0.65rem)] text-[#8a7a6a] mb-[4%]">
-          <span className="flex items-center">📅 DATUM: <span className="inline-block w-[6cqi] max-w-[60px] border-b border-[#b8a89a] ml-1" /></span>
-          <span className="flex items-center">📍 LOKACIJA: <span className="inline-block w-[6cqi] max-w-[60px] border-b border-[#b8a89a] ml-1" /></span>
+          <span className="flex items-center">ðŸ“… DATUM: <span className="inline-block w-[6cqi] max-w-[60px] border-b border-[#b8a89a] ml-1" /></span>
+          <span className="flex items-center">ðŸ“ LOKACIJA: <span className="inline-block w-[6cqi] max-w-[60px] border-b border-[#b8a89a] ml-1" /></span>
         </div>
         {/* Photo frame with actual image */}
         <div className="w-[70%] mx-auto aspect-[4/3] border-[1.5px] border-[#b8a89a]/50 rounded-lg overflow-hidden relative mb-[4%] p-1 bg-white/40">
@@ -225,7 +225,7 @@ function PageActivity() {
           </div>
         </div>
         <p className="text-[clamp(0.5rem,0.8cqi,0.7rem)] uppercase tracking-[0.2em] text-[#8a7a6a] font-semibold mb-[2%]">
-          Najlepši trenutek:
+          NajlepÅ¡i trenutek:
         </p>
         <div className="space-y-[clamp(8px,1.5cqi,16px)] flex-1">
           <Line /><Line /><Line /><Line />
@@ -242,8 +242,8 @@ function PageClosingQuote() {
       <div className="absolute inset-0 flex items-center justify-center px-[10%]">
         <p className="font-serif text-[clamp(0.75rem,1.3cqi,1.1rem)] text-[#5b4a3e] italic text-center leading-[1.8] max-w-[85%]">
           &ldquo;Ne gre za to, koliko zmenkov sta opravila.<br />
-          Gre za to, koliko ljubezni sta vanje vložila.<br />
-          Naj bo to le začetek vseh vajinih prihodnjih<br />
+          Gre za to, koliko ljubezni sta vanje vloÅ¾ila.<br />
+          Naj bo to le zaÄetek vseh vajinih prihodnjih<br />
           poglavij.&rdquo;
         </p>
       </div>
@@ -256,17 +256,17 @@ function PagePromises() {
     <PaperBase>
       <div className="absolute inset-0 flex flex-col px-[10%] py-[6%]">
         <p className="font-serif text-[clamp(0.75rem,1.3cqi,1.1rem)] text-[#3a3029] font-semibold mb-[6%]">
-          &ldquo;Ko bova čez leta listala to knjigo...&rdquo;
+          &ldquo;Ko bova Äez leta listala to knjigo...&rdquo;
         </p>
         <div className="space-y-[clamp(12px,2.5cqi,24px)] flex-1">
           {[
             "Upava, da se bova spomnila",
-            "Da se bova še vedno",
+            "Da se bova Å¡e vedno",
             "In da bo najina ljubezen ostala",
             "",
-            "Obljubiva si, da si bova vedno vzela čas za:",
+            "Obljubiva si, da si bova vedno vzela Äas za:",
             "Da ne bova nikoli pozabila na:",
-            "Da bova skupaj ustvarila še vsaj ___ novih zmenkov.",
+            "Da bova skupaj ustvarila Å¡e vsaj ___ novih zmenkov.",
           ].map((text, i) => (
             <div key={i}>
               {text ? (
@@ -294,83 +294,26 @@ const SPREADS: [() => ReactNode, () => ReactNode][] = [
   [PageClosingQuote, PagePromises],
 ];
 
-/* ═══════════════════════════════════════════════
-   SOUND — realistic paper page-turn via Web Audio
-   ═══════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SOUND â€” realistic paper page-turn via Web Audio
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 let pageTurnBuffer: AudioBuffer | null = null;
 let audioCtx: AudioContext | null = null;
 let activeSource: AudioBufferSourceNode | null = null;
 let activeGain: GainNode | null = null;
 
 // Pre-generate the audio buffer offline so it's instantly ready
-async function generatePaperBuffer() {
+async function loadPaperSound() {
   if (pageTurnBuffer) return;
   try {
-    const rate = 44100;
-    const dur = (TURN_MS / 1000); // exactly matches animation duration (0.72s)
-    const OfflineCtx = window.OfflineAudioContext || (window as any).webkitOfflineAudioContext;
-    if (!OfflineCtx) return;
-
-    const ctx = new OfflineCtx(2, Math.floor(rate * dur), rate);
-    const len = ctx.length;
-    const buf = ctx.createBuffer(2, len, rate);
-
-    for (let ch = 0; ch < 2; ch++) {
-      const d = buf.getChannelData(ch);
-      for (let i = 0; i < len; i++) {
-        const t = i / rate;
-        let env = 0;
-        // Perfect sync with physical animation:
-        // 0-15%: Lift, 15-35%: Bend, 35-65%: Spine cross, 65-90%: Opposite side, 90-100%: Land
-        const p = t / dur; // progress 0 to 1
-        
-        if (p < 0.15) env = (p / 0.15) * 0.1;
-        else if (p < 0.35) env = 0.1 + ((p - 0.15) / 0.2) * 0.3;
-        else if (p < 0.65) env = 0.4 + Math.sin(((p - 0.35) / 0.3) * Math.PI) * 0.6; // Peak at spine
-        else if (p < 0.90) env = 0.4 - ((p - 0.65) / 0.25) * 0.3;
-        else env = 0.1 - ((p - 0.90) / 0.1) * 0.1;
-
-        d[i] = (Math.random() * 2 - 1) * env;
-      }
-    }
-
-    const src = ctx.createBufferSource();
-    src.buffer = buf;
-
-    // Filter to sound like premium paper
-    const bp = ctx.createBiquadFilter();
-    bp.type = "bandpass";
-    bp.frequency.value = 1400;
-    bp.Q.value = 0.5;
-
-    const hp = ctx.createBiquadFilter();
-    hp.type = "highpass";
-    hp.frequency.value = 400;
-
-    src.connect(bp).connect(hp).connect(ctx.destination);
-
-    // Subtle thump for the landing (90-100%)
-    const osc = ctx.createOscillator();
-    const oscGain = ctx.createGain();
-    osc.type = "sine";
-    const landTime = dur * 0.9;
-    osc.frequency.setValueAtTime(70, landTime);
-    osc.frequency.exponentialRampToValueAtTime(30, dur);
-    
-    oscGain.gain.setValueAtTime(0, 0);
-    oscGain.gain.setValueAtTime(0, landTime);
-    oscGain.gain.linearRampToValueAtTime(0.4, landTime + (dur * 0.02));
-    oscGain.gain.exponentialRampToValueAtTime(0.01, dur);
-    
-    osc.connect(oscGain).connect(ctx.destination);
-
-    src.start();
-    osc.start(landTime);
-    osc.stop(dur);
-
-    pageTurnBuffer = await ctx.startRendering();
+    const AudioCtx = window.AudioContext || (window as any).webkitAudioContext;
+    if (!AudioCtx) return;
+    const ctx = new AudioCtx();
+    const response = await fetch("/sounds/page-flip.mp3");
+    const arrayBuffer = await response.arrayBuffer();
+    pageTurnBuffer = await ctx.decodeAudioData(arrayBuffer);
   } catch (e) {
-    console.error("Audio generation failed", e);
+    console.error("Audio loading failed", e);
   }
 }
 
@@ -419,9 +362,9 @@ function playSyncedTurnSound(progressOffset = 0, dir: "fwd" | "bwd" = "fwd", vol
   activeGain = gain;
 }
 
-/* ═══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    SPINE COMPONENT
-   ═══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function BookSpine() {
   return (
     <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[14px] z-40 pointer-events-none">
@@ -429,11 +372,11 @@ function BookSpine() {
       <div className="absolute inset-0 rounded-[1px]" style={{
         background: "linear-gradient(to right, rgba(0,0,0,0.03), rgba(0,0,0,0.18) 35%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.18) 65%, rgba(0,0,0,0.03))",
       }} />
-      {/* Inner page curl shadow — left side */}
+      {/* Inner page curl shadow â€” left side */}
       <div className="absolute inset-y-0 -left-[20px] w-[20px]" style={{
         background: "linear-gradient(to left, rgba(0,0,0,0.08), transparent)",
       }} />
-      {/* Inner page curl shadow — right side */}
+      {/* Inner page curl shadow â€” right side */}
       <div className="absolute inset-y-0 -right-[20px] w-[20px]" style={{
         background: "linear-gradient(to right, rgba(0,0,0,0.08), transparent)",
       }} />
@@ -441,9 +384,9 @@ function BookSpine() {
   );
 }
 
-/* ═══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    PAGE STACK THICKNESS
-   ═══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 function PageStack({ side, count }: { side: "left" | "right"; count: number }) {
   const thickness = Math.min(count, 5);
   return (
@@ -461,9 +404,9 @@ function PageStack({ side, count }: { side: "left" | "right"; count: number }) {
   );
 }
 
-/* ═══════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    MAIN COMPONENT
-   ═══════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 export function InteractiveBook() {
   const [current, setCurrent] = useState(0);
   const [flip, setFlip] = useState<{ from: number; to: number; dir: "fwd" | "bwd" } | null>(null);
@@ -480,7 +423,7 @@ export function InteractiveBook() {
 
   // Generate audio buffer on mount
   useEffect(() => {
-    generatePaperBuffer();
+    loadPaperSound();
   }, []);
 
   // Reduced motion
@@ -630,10 +573,10 @@ export function InteractiveBook() {
 
   const onMouseLeave = useCallback(() => setHoverSide(null), []);
 
-  /* ── Mobile pan state ── */
+  /* â”€â”€ Mobile pan state â”€â”€ */
   const [mobilePan, setMobilePan] = useState<"left" | "right">("right");
 
-  /* ── Determine visible pages ── */
+  /* â”€â”€ Determine visible pages â”€â”€ */
   const LeftPage = SPREADS[current][0];
   const RightPage = SPREADS[current][1];
 
@@ -656,7 +599,7 @@ export function InteractiveBook() {
     }
   }
 
-  /* ── 3D calculations ── */
+  /* â”€â”€ 3D calculations â”€â”€ */
   const angle = flip
     ? flip.dir === "fwd"
       ? -180 * progress
@@ -665,11 +608,11 @@ export function InteractiveBook() {
 
   const shadowIntensity = Math.sin(progress * Math.PI);
 
-  /* ── Corner hover lift ── */
+  /* â”€â”€ Corner hover lift â”€â”€ */
   const cornerLift = hoverSide ? 4 : 0;
   const cornerSide = hoverSide;
 
-  /* ── Mobile pan calculation ── */
+  /* â”€â”€ Mobile pan calculation â”€â”€ */
   // On mobile (w-[185%]), the book is much wider than screen.
   // We translate the container so the left or right page is centered.
   // A left page is 50% of the book. We want to center the 0-50% portion on screen.
@@ -733,7 +676,7 @@ export function InteractiveBook() {
             style={{ background: "linear-gradient(135deg, #7a6b5d, #6b5c4e, #7a6b5d)", boxShadow: "0 2px 8px rgba(0,0,0,0.2)" }}
           />
 
-          {/* ── LEFT PAGE ── */}
+          {/* â”€â”€ LEFT PAGE â”€â”€ */}
           <div className="absolute inset-y-0 left-0 w-1/2 overflow-hidden rounded-l-[4px]">
             {flip ? underLeftPage() : LeftPage()}
             {/* Corner hover effect */}
@@ -748,7 +691,7 @@ export function InteractiveBook() {
             )}
           </div>
 
-          {/* ── RIGHT PAGE ── */}
+          {/* â”€â”€ RIGHT PAGE â”€â”€ */}
           <div className="absolute inset-y-0 right-0 w-1/2 overflow-hidden rounded-r-[4px]">
             {flip ? underRightPage() : RightPage()}
             {/* Corner hover effect */}
@@ -763,10 +706,10 @@ export function InteractiveBook() {
             )}
           </div>
 
-          {/* ── SPINE ── */}
+          {/* â”€â”€ SPINE â”€â”€ */}
           <BookSpine />
 
-          {/* ── TURNING PAGE ── */}
+          {/* â”€â”€ TURNING PAGE â”€â”€ */}
           {flip && !reducedMotion && (
             <div
               className="absolute inset-y-0 w-1/2 z-20"
@@ -816,7 +759,7 @@ export function InteractiveBook() {
             </div>
           )}
 
-          {/* ── CAST SHADOW during turn ── */}
+          {/* â”€â”€ CAST SHADOW during turn â”€â”€ */}
           {flip && (
             <div
               className="absolute inset-y-0 w-1/2 pointer-events-none z-10"
@@ -828,13 +771,13 @@ export function InteractiveBook() {
             />
           )}
 
-          {/* ── PAGE STACK ── */}
+          {/* â”€â”€ PAGE STACK â”€â”€ */}
           <PageStack side="left" count={current} />
           <PageStack side="right" count={TOTAL_SPREADS - 1 - current} />
         </div>
       </div>
 
-      {/* ── CONTROLS ── */}
+      {/* â”€â”€ CONTROLS â”€â”€ */}
       <div className="mt-8 md:mt-10 flex flex-col items-center">
         <div className="flex items-center gap-5">
           <button
@@ -845,7 +788,7 @@ export function InteractiveBook() {
                 ? "hover:bg-cream/10 hover:scale-110 cursor-pointer text-cream/70 hover:text-cream"
                 : "opacity-20 cursor-default text-cream/30"
             }`}
-            aria-label="Prejšnja stran"
+            aria-label="PrejÅ¡nja stran"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -883,3 +826,4 @@ export function InteractiveBook() {
     </div>
   );
 }
+
