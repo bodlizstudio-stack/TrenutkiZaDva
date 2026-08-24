@@ -21,10 +21,10 @@ export function Hero() {
             Knjiga za pare
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-[72px] leading-[1.1] mb-5 md:mb-6 text-espresso text-balance">
-            100 idej. NeÅ¡teto skupnih spominov.
+            100 idej. Nešteto skupnih spominov.
           </h1>
           <p className="text-base md:text-xl text-soft-brown mb-6 md:mb-8 text-balance max-w-lg mx-auto md:mx-0 leading-relaxed">
-            Knjiga s 100 idejami za zmenke in doÅ¾ivetja, ki vaju spodbuja, da preizkusita nekaj novega, preÅ¾ivita kakovosten Äčas skupaj in ustvarita spomine, ki ostanejo.
+            Knjiga s 100 idejami za zmenke in doživetja, ki vaju spodbuja, da preizkusita nekaj novega, preživita kakovosten Äčas skupaj in ustvarita spomine, ki ostanejo.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-8 md:mb-10 justify-center md:justify-start">
@@ -77,7 +77,7 @@ export function Hero() {
             transition={{ delay: 1, duration: 0.8 }}
             className="absolute bottom-6 md:bottom-8 left-4 md:left-6 bg-warm-white/95 backdrop-blur-md px-5 py-3 md:px-6 md:py-4 rounded-xl shadow-md border border-sand hidden sm:block"
           >
-            <p className="font-serif text-espresso text-base md:text-lg font-medium">100 skupnih doÅ¾ivetij</p>
+            <p className="font-serif text-espresso text-base md:text-lg font-medium">100 skupnih doživetij</p>
             <p className="text-xs md:text-sm text-soft-brown">Za vajino zgodbo</p>
           </motion.div>
         </motion.div>

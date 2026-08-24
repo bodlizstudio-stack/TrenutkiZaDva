@@ -28,14 +28,14 @@ export function FinalCTA() {
           className="max-w-3xl mx-auto space-y-8"
         >
           <h2 className="text-4xl md:text-6xl font-serif text-warm-white leading-tight">
-            Naslednji nepozabni trenutek se lahko zaÄne danes.
+            Naslednji nepozabni trenutek se lahko začne danes.
           </h2>
           <p className="text-lg md:text-xl text-cream/80 max-w-xl mx-auto">
-            100 idej, ki Äakajo, da postanejo vajini spomini.
+            100 idej, ki čakajo, da postanejo vajini spomini.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
             <Button asChild size="lg" className="bg-cream text-espresso hover:bg-warm-white h-14 text-lg">
-              <Link href="/100-nepozabnih-trenutkov">NaroÄi knjigo â€“ 34,99 â‚¬</Link>
+              <Link href="/100-nepozabnih-trenutkov">Naroči knjigo – 34,99 €</Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-cream text-cream hover:bg-cream/10 h-14 text-lg">
               <Link href="/#notranjost">Poglej notranjost</Link>
