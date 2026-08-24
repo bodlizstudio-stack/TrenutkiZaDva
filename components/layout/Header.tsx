@@ -40,9 +40,7 @@ export function Header() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b",
-        isScrolled 
-          ? "bg-cream/90 backdrop-blur-md border-sand py-4 shadow-sm" 
-          : "bg-transparent border-transparent py-6"
+        isScrolled || isMobileMenuOpen ? "bg-cream border-sand py-4 shadow-sm" : "bg-transparent border-transparent py-6"
       )}
     >
       <div className="container-wide flex items-center justify-between">
@@ -126,7 +124,7 @@ export function Header() {
       {/* Mobile Menu */}
       <div 
         className={cn(
-          "fixed inset-0 bg-cream z-0 lg:hidden flex flex-col pt-24 px-6 pb-8 transition-transform duration-300 ease-in-out origin-top",
+          "absolute top-full left-0 right-0 bg-cream border-b border-sand shadow-lg lg:hidden flex flex-col px-6 py-8 transition-transform duration-300 ease-in-out origin-top",
           isMobileMenuOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0"
         )}
       >
@@ -152,3 +150,5 @@ export function Header() {
     </header>
   );
 }
+
+
