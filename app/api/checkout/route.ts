@@ -19,11 +19,11 @@ export async function POST(req: Request) {
     }
 
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
-      apiVersion: '2025-02-24.acacia',
+      apiVersion: '2026-07-29.dahlia',
     });
 
     const line_items = items.map((item: any) => {
-      let imageUrls = [];
+      let imageUrls: string[] = [];
       if (item.image) {
         const isAbsolute = item.image.startsWith('http://') || item.image.startsWith('https://');
         imageUrls = isAbsolute ? [item.image] : [`${baseUrl}${item.image.startsWith('/') ? '' : '/'}${item.image}`];
@@ -85,3 +85,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
+
