@@ -81,8 +81,8 @@ function PageKazaloLeft() {
       <div className="absolute inset-0 flex items-center justify-center px-8">
         <p className="font-serif text-[clamp(0.8rem,1.4cqi,1.2rem)] text-[#7a6b5d] italic text-center leading-relaxed max-w-[80%]">
           &ldquo;Vsak par ima svojo zgodbo.<br />
-          VÄasih jo piÅ¡emo spontano,<br />
-          drugiÄ potrebujemo le majhen navdih.&rdquo;
+          Včasih jo pišemo spontano,<br />
+          drugič potrebujemo le majhen navdih.&rdquo;
         </p>
       </div>
     </PaperBase>
@@ -91,18 +91,18 @@ function PageKazaloLeft() {
 
 function PageKazalo() {
   const sections = [
-    { name: "Zima", pages: "1â€“9" },
-    { name: "Pomlad", pages: "10â€“17" },
-    { name: "Poletje", pages: "18â€“28" },
-    { name: "Jesen", pages: "29â€“34" },
-    { name: "Za vse letne Äase", pages: "35â€“54" },
+    { name: "Zima", pages: "1–9" },
+    { name: "Pomlad", pages: "10–17" },
+    { name: "Poletje", pages: "18–28" },
+    { name: "Jesen", pages: "29–34" },
+    { name: "Za vse letne čase", pages: "35–54" },
   ];
   const categories = [
-    { name: "Kreativni trenutki", pages: "55â€“65" },
-    { name: "Romantika brez meja", pages: "66â€“72" },
-    { name: "Okusi in uÅ¾itki", pages: "73â€“81" },
-    { name: "DomaÄa Äarovnija", pages: "82â€“90" },
-    { name: "Prostor za vajine ideje", pages: "91â€“100" },
+    { name: "Kreativni trenutki", pages: "55–65" },
+    { name: "Romantika brez meja", pages: "66–72" },
+    { name: "Okusi in užitki", pages: "73–81" },
+    { name: "Domača čarovnija", pages: "82–90" },
+    { name: "Prostor za vajine ideje", pages: "91–100" },
   ];
   return (
     <PaperBase>
@@ -136,10 +136,10 @@ function PageQuoteLeft() {
     <PaperBase>
       <div className="absolute inset-0 flex items-end justify-center px-[10%] pb-[20%]">
         <p className="font-serif text-[clamp(0.75rem,1.3cqi,1.1rem)] text-[#5b4a3e] italic text-center leading-[1.8] max-w-[85%]">
-          &ldquo;Ljubezen ni nekaj, kar najdeÅ¡. Ljubezen je nekaj,
-          kar gradiÅ¡ korak za korakom, trenutek za trenutkom.
+          &ldquo;Ljubezen ni nekaj, kar najdeš. Ljubezen je nekaj,
+          kar gradiš korak za korakom, trenutek za trenutkom.
           Ta knjiga ni le zbirka idej. Je vajin dnevnik,
-          vajina pustolovÅ¡Äina in vajin spomin
+          vajina pustolovščina in vajin spomin
           na vse, kar bosta skupaj ustvarila.&rdquo;
         </p>
       </div>
@@ -166,11 +166,11 @@ function PageToSvaMidva() {
         <p className="font-serif text-[clamp(0.7rem,1.2cqi,1rem)] text-[#3a3029] font-semibold mb-[4%]">Midva v nekaj vrsticah:</p>
         <div className="w-[85%] space-y-[clamp(8px,2cqi,20px)]">
           <div>
-            <p className="text-[clamp(0.55rem,1cqi,0.85rem)] text-[#5b4a3e] mb-[2%]">Kdaj sva zaÄela najino zgodbo?</p>
+            <p className="text-[clamp(0.55rem,1cqi,0.85rem)] text-[#5b4a3e] mb-[2%]">Kdaj sva začela najino zgodbo?</p>
             <Line />
           </div>
           <div>
-            <p className="text-[clamp(0.55rem,1cqi,0.85rem)] text-[#5b4a3e] mb-[2%]">Kaj najraje skupaj poÄneva?</p>
+            <p className="text-[clamp(0.55rem,1cqi,0.85rem)] text-[#5b4a3e] mb-[2%]">Kaj najraje skupaj počneva?</p>
             <Line />
           </div>
           <div>
@@ -209,8 +209,8 @@ function PageActivity() {
         </div>
         {/* Date & Location */}
         <div className="flex justify-between text-[clamp(0.45rem,0.8cqi,0.65rem)] text-[#8a7a6a] mb-[4%]">
-          <span className="flex items-center">ðŸ“… DATUM: <span className="inline-block w-[6cqi] max-w-[60px] border-b border-[#b8a89a] ml-1" /></span>
-          <span className="flex items-center">ðŸ“ LOKACIJA: <span className="inline-block w-[6cqi] max-w-[60px] border-b border-[#b8a89a] ml-1" /></span>
+          <span className="flex items-center">📅 DATUM: <span className="inline-block w-[6cqi] max-w-[60px] border-b border-[#b8a89a] ml-1" /></span>
+          <span className="flex items-center">📍 LOKACIJA: <span className="inline-block w-[6cqi] max-w-[60px] border-b border-[#b8a89a] ml-1" /></span>
         </div>
         {/* Photo frame with actual image */}
         <div className="w-[70%] mx-auto aspect-[4/3] border-[1.5px] border-[#b8a89a]/50 rounded-lg overflow-hidden relative mb-[4%] p-1 bg-white/40">
@@ -225,7 +225,7 @@ function PageActivity() {
           </div>
         </div>
         <p className="text-[clamp(0.5rem,0.8cqi,0.7rem)] uppercase tracking-[0.2em] text-[#8a7a6a] font-semibold mb-[2%]">
-          NajlepÅ¡i trenutek:
+          Najlepši trenutek:
         </p>
         <div className="space-y-[clamp(8px,1.5cqi,16px)] flex-1">
           <Line /><Line /><Line /><Line />
@@ -242,8 +242,8 @@ function PageClosingQuote() {
       <div className="absolute inset-0 flex items-center justify-center px-[10%]">
         <p className="font-serif text-[clamp(0.75rem,1.3cqi,1.1rem)] text-[#5b4a3e] italic text-center leading-[1.8] max-w-[85%]">
           &ldquo;Ne gre za to, koliko zmenkov sta opravila.<br />
-          Gre za to, koliko ljubezni sta vanje vloÅ¾ila.<br />
-          Naj bo to le zaÄetek vseh vajinih prihodnjih<br />
+          Gre za to, koliko ljubezni sta vanje vložila.<br />
+          Naj bo to le začetek vseh vajinih prihodnjih<br />
           poglavij.&rdquo;
         </p>
       </div>
@@ -788,7 +788,7 @@ export function InteractiveBook() {
                 ? "hover:bg-cream/10 hover:scale-110 cursor-pointer text-cream/70 hover:text-cream"
                 : "opacity-20 cursor-default text-cream/30"
             }`}
-            aria-label="PrejÅ¡nja stran"
+            aria-label="Prejšnja stran"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
