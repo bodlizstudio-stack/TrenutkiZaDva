@@ -69,7 +69,7 @@ export async function POST(req: Request) {
         </p>
 
         <div style="background-color: #FBF8F1; padding: 20px; border-radius: 8px; border: 1px solid #E8DFCF; font-family: sans-serif; text-align: left;">
-          <p style="margin: 0 0 10px 0; font-size: 14px; color: #80634B; font-weight: bold;">Če imate nujno vprašanje, sva dosegljiva tukaj:</p>
+          <p style="margin: 0 0 10px 0; font-size: 14px; color: #80634B; font-weight: bold;">Če imate nujno vprašanje, smo dosegljivi tukaj:</p>
           <div style="margin-bottom: 5px;">
             <strong style="color: #3A3029;">E-mail:</strong> <a href="mailto:info@trenutkizadva.si" style="color: #AD8067; text-decoration: none;">info@trenutkizadva.si</a>
           </div>
@@ -93,3 +93,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: 'Napaka pri pošiljanju e-maila' }, { status: 500 });
   }
 }
+

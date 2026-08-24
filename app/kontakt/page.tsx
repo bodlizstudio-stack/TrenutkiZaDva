@@ -45,7 +45,7 @@ export default function ContactPage() {
       <div className="container-wide">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h1 className="text-4xl md:text-5xl font-serif text-espresso mb-6">
-            Sva tukaj, če naju potrebuješ.
+            Smo tukaj, če nas potrebuješ.
           </h1>
           <p className="text-lg text-soft-brown">
             Imaš vprašanje o knjigi, naročilu ali dostavi? Piši nam in odgovorili ti bomo v najkrajšem možnem času.
@@ -135,3 +135,4 @@ export default function ContactPage() {
     </div>
   );
 }
+
